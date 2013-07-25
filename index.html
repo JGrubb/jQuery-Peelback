@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Jquery-peelback by JGrubb</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Jquery-peelback</h1>
+        <h2>A jQuery plugin for peelback ads</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/JGrubb/jQuery-Peelback/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/JGrubb/jQuery-Peelback/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/JGrubb/jQuery-Peelback" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="jquery-peelback-ad" class="anchor" href="#jquery-peelback-ad"><span class="octicon octicon-link"></span></a>jQuery Peelback Ad</h1>
+
+<p>This is a jQuery plugin for adding a "peelback" or "peelaway" ad to a page. It's based on this <a href="http://www.sohtanaka.com/web-design/simple-page-peel-effect-with-jquery-css/">peelback demo</a>, by Soh Tanaka, which achieves the peelback effect by animating the ad image (the background image) and the peel image in parallel.</p>
+
+<p>Some features:</p>
+
+<ul>
+<li>Except for the two images, everything is contained in the plugin, which means you can add this to your site without having to touch your stylesheets or HTML.</li>
+<li>Lightweight. The script and the peel effect image combined are only 7.3KB.</li>
+<li>Plugs into Google Analytics Event Tracking to record the mouseover/peelback event.</li>
+<li>Works in all modern browsers as well as IE6, IE7, and IE8.</li>
+</ul><h2>
+<a name="how-to-use-it" class="anchor" href="#how-to-use-it"><span class="octicon octicon-link"></span></a>How to use it:</h2>
+
+<p>Just call the <code>.peelback()</code> method on the <code>body</code> element and fill in the parameters.</p>
+
+<h3>
+<a name="required" class="anchor" href="#required"><span class="octicon octicon-link"></span></a>Required</h3>
+
+<p><strong><code>adImage</code>** : path to the ad image (string)<br>
+**<code>peelImage</code>** : path to "peel-image.png" (string)<br>
+**<code>clickURL</code></strong> : click-through URL for the ad (string)</p>
+
+<h3>
+<a name="optional" class="anchor" href="#optional"><span class="octicon octicon-link"></span></a>Optional</h3>
+
+<p><strong><code>prePeelImage</code>** : Specifies a different image for before the peelback is triggered<br>
+**<code>smallSize</code>** : Specify size of small peel preview (number; default=58)<br>
+**<code>bigSize</code>** : Specify size of full size ad image (number; default=510)<br>
+**<code>gaTrack</code>** : Send peelback events to Google Analytics? (boolean; default=false)<br>
+**<code>gaLabel</code>** : GA event label to use (string; default="default")<br>
+**<code>autoAnimate</code>** : animate peelback corner on pageload (boolean; default=true)<br>
+**<code>debug</code></strong> : display errors in console (boolean; default=false) </p>
+
+<pre><code>$(function(){
+  $('body').peelback({
+    prePeelImage: 'http://imgs.tuts.dragoart.com/how-to-draw-a-zombie-for-kids_1_000000008829_5.jpg',
+    adImage     : 'peel-ad.png',
+    peelImage   : '../assets/peel-image.png',
+    clickURL    : 'http://www.thebestdinosaur.com/',
+    smallSize   : 50,
+    bigSize     : 500,
+    gaTrack     : true,
+    gaLabel     : '#1 Stegosaurus',
+    autoAnimate : true,
+    debug       : false 
+  });
+});
+</code></pre>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://www.ravelrumba.com/code/demos/jquery-peelback/demo/">http://www.ravelrumba.com/code/demos/jquery-peelback/demo/</a></p>
+
+<h2>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>jQuery. Tested on 1.4.4 and 1.5.2.</p>
+
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p>0.2: 04/25/2011 - Added image sizes as settings. Removed dataURI version to keep things simple.<br>
+0.1: 12/26/2010 - Release</p>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p><a href="http://www.sohtanaka.com/web-design/simple-page-peel-effect-with-jquery-css/">http://www.sohtanaka.com/web-design/simple-page-peel-effect-with-jquery-css/</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

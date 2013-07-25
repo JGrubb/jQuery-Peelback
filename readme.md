@@ -17,6 +17,7 @@ Just call the `.peelback()` method on the `body` element and fill in the paramet
 **`clickURL`** : click-through URL for the ad (string)
 
 ###Optional
+**`prePeelImage`** : Specifies a different image for before the peelback is triggered.
 **`smallSize`** : Specify size of small peel preview (number; default=58)  
 **`bigSize`** : Specify size of full size ad image (number; default=510)  
 **`gaTrack`** : Send peelback events to Google Analytics? (boolean; default=false)  
@@ -26,6 +27,7 @@ Just call the `.peelback()` method on the `body` element and fill in the paramet
     
     $(function(){
       $('body').peelback({
+        prePeelImage: 'http://imgs.tuts.dragoart.com/how-to-draw-a-zombie-for-kids_1_000000008829_5.jpg',
         adImage     : 'peel-ad.png',
         peelImage   : '../assets/peel-image.png',
         clickURL    : 'http://www.thebestdinosaur.com/',

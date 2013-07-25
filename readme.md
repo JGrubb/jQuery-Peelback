@@ -12,12 +12,14 @@ Some features:
 Just call the `.peelback()` method on the `body` element and fill in the parameters.
 
 ###Required
+
 **`adImage`** : path to the ad image (string)  
 **`peelImage`** : path to "peel-image.png" (string)  
 **`clickURL`** : click-through URL for the ad (string)
 
 ###Optional
-**`prePeelImage`** : Specifies a different image for before the peelback is triggered.
+
+**`prePeelImage`** : Specifies a different image for before the peelback is triggered  
 **`smallSize`** : Specify size of small peel preview (number; default=58)  
 **`bigSize`** : Specify size of full size ad image (number; default=510)  
 **`gaTrack`** : Send peelback events to Google Analytics? (boolean; default=false)  

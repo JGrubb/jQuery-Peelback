@@ -21,10 +21,11 @@
     base.init = function() {
       
       //Vars
-      var peelHTML, peelImage, peelMask, smallSize, bigSize, smallMaskSize, bigMaskSize;
+      var peelHTML, peelImage, peelMask, smallSize, bigSize, smallMaskSize, bigMaskSize, prePeelImage;
       
       //Defaults, meet Settings
-      base.settings = $.extend({},$.Peelback.defaultSettings, settings);      
+      base.settings = $.extend({},$.Peelback.defaultSettings, settings);
+      base.settings.prePeelImage = base.settings.prePeelImage || base.settings.adImage;
       
       //If ad image is missing, stop the show            
       if (typeof(base.settings.adImage) !== 'string' || base.settings.adImage === '') {
@@ -79,7 +80,7 @@
         'right': '0',
         'top': '0',
         'z-index': '9000',
-        'background': 'url(' + base.settings.adImage + ') no-repeat right top'
+        'background': 'url(' + base.settings.prePeelImage + ') no-repeat right top'
       });
       
       //Insert
@@ -103,29 +104,19 @@
       
       //Hover behavior
       peelHTML.hover(
-        
         //Mouseover
-        function() {      
+        function() { 
+          $(peelMask).css({'background-image': 'url(' + base.settings.adImage + ')'});
           $(peelImage).stop().animate({
             width: bigSize, 
             height: bigSize
           }, 500);
-          
+
           $(peelMask).stop().animate({
             width: bigMaskSize, 
             height: bigMaskSize
           }, 500);
             
-          //If GA tracking enabled
-          if (base.settings.gaTrack === true) {    
-            if (typeof(_gaq) != 'undefined') {
-              _gaq.push(['_trackEvent', 'Ad_Interaction', 'Peelback', base.settings.gaLabel]);
-            } else {
-              if (base.settings.debug === true) {
-                console.log('Google Analytics _gaq object undefined');
-              }
-            }  
-         }   
         },
         
         //Mouseout
@@ -138,7 +129,9 @@
           $(peelMask).stop().animate({
             width: smallMaskSize,
             height: smallMaskSize
-          }, 400);
+          }, 400, function(){
+            $(peelMask).css({'background-image' : 'url(' + base.settings.prePeelImage + ')'});
+          });
         }
       
       );
@@ -150,6 +143,7 @@
   };
     
   $.Peelback.defaultSettings = {
+    prePeelImage: null,
     adImage     : null,
     peelImage   : null,
     clickURL    : null,

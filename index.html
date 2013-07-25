@@ -1,33 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Jquery-peelback by JGrubb</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <header>
-      <div class="container">
+    <div class="wrapper">
+      <header>
         <h1>Jquery-peelback</h1>
-        <h2>A jQuery plugin for peelback ads</h2>
+        <p>A jQuery plugin for peelback ads</p>
 
-        <section id="downloads">
-          <a href="https://github.com/JGrubb/jQuery-Peelback/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/JGrubb/jQuery-Peelback/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/JGrubb/jQuery-Peelback" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <p class="view"><a href="https://github.com/JGrubb/jQuery-Peelback">View the Project on GitHub <small>JGrubb/jQuery-Peelback</small></a></p>
 
-    <div class="container">
-      <section id="main_content">
+
+        <ul>
+          <li><a href="https://github.com/JGrubb/jQuery-Peelback/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JGrubb/jQuery-Peelback/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JGrubb/jQuery-Peelback">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
 <a name="jquery-peelback-ad" class="anchor" href="#jquery-peelback-ad"><span class="octicon octicon-link"></span></a>jQuery Peelback Ad</h1>
 
@@ -48,20 +48,12 @@
 <h3>
 <a name="required" class="anchor" href="#required"><span class="octicon octicon-link"></span></a>Required</h3>
 
-<p><strong><code>adImage</code>** : path to the ad image (string)<br>
-**<code>peelImage</code>** : path to "peel-image.png" (string)<br>
-**<code>clickURL</code></strong> : click-through URL for the ad (string)</p>
+<p><code>adImage</code> : path to the ad image (string)<br><code>peelImage</code> : path to "peel-image.png" (string)<br><code>clickURL</code> : click-through URL for the ad (string)</p>
 
 <h3>
 <a name="optional" class="anchor" href="#optional"><span class="octicon octicon-link"></span></a>Optional</h3>
 
-<p><strong><code>prePeelImage</code>** : Specifies a different image for before the peelback is triggered<br>
-**<code>smallSize</code>** : Specify size of small peel preview (number; default=58)<br>
-**<code>bigSize</code>** : Specify size of full size ad image (number; default=510)<br>
-**<code>gaTrack</code>** : Send peelback events to Google Analytics? (boolean; default=false)<br>
-**<code>gaLabel</code>** : GA event label to use (string; default="default")<br>
-**<code>autoAnimate</code>** : animate peelback corner on pageload (boolean; default=true)<br>
-**<code>debug</code></strong> : display errors in console (boolean; default=false) </p>
+<p><code>prePeelImage</code> : Specifies a different image for before the peelback is triggered<br><code>smallSize</code> : Specify size of small peel preview (number; default=58)<br><code>bigSize</code> : Specify size of full size ad image (number; default=510)<br><code>gaTrack</code> : Send peelback events to Google Analytics? (boolean; default=false)<br><code>gaLabel</code> : GA event label to use (string; default="default")<br><code>autoAnimate</code> : animate peelback corner on pageload (boolean; default=true)<br><code>debug</code> : display errors in console (boolean; default=false) </p>
 
 <pre><code>$(function(){
   $('body').peelback({
@@ -100,8 +92,12 @@
 
 <p><a href="http://www.sohtanaka.com/web-design/simple-page-peel-effect-with-jquery-css/">http://www.sohtanaka.com/web-design/simple-page-peel-effect-with-jquery-css/</a></p>
       </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JGrubb">JGrubb</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
